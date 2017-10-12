@@ -178,7 +178,7 @@ def print_transaction(t, short=True, extras=None):
        - '+' when the category is fetched from .json matches file
        - ' ' when the category is present in input file
     """
-    keys = ('date', 'amount', 'payee', 'category') if short else list(t.keys())
+    keys = ('date', 'amount', 'payee', 'category', 'memo') if short else list(t.keys())
     _, _, matches = tags.find_tag_for(t)
     for field in keys:
         if t[field] and not field.isdigit():
